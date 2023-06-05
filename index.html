@@ -1,0 +1,43 @@
+<html>
+ <head>
+         <title>Welcome app</title>
+  <style>
+      *{ font-size:50px; }
+      body {background-color:lightblue;}
+</style>
+     <script>
+           function order()
+    {
+          event.preventDefault();
+           let name = document.getElementById("name");
+           let masala = document.getElementById("masala");
+           let adrak = document.getElementById("adrak");
+           let elaichi = document.getElementById("elaichi");
+           let msg = document.getElementById("msg");
+           
+           let t ="";
+           if (masala.checked)         t = "masala ";
+           else if (adrak.checked)     t = "adrak";
+           else 		       t = "elaichi";
+                   
+           
+           let ans = name.value + " " + t;
+           msg.innerHTML = ans;
+            }
+        </script>
+        </head>
+        <body>
+         <center>
+         <h1> RAJ CHAIWALLAH APP </h1>
+         <form onsubmit="order()">
+               <input type "text" placeholder= "enter ur name" id= "name"/>
+               <br/><br/>
+               <input type="radio" value="masala" id="masala" onclick="adrak.checked=false;elaichi.checked=false" checked/> Masala
+      <input type="radio" value="adrak" id ="adrak" onclick="masala.checked=false;elaichi.checked=false"/> Adrak
+   <input type="radio" value="elaichi" id ="elaichi"  onclick="masala.checked=false;adrak.checked=false" id ="elaichi"/> Elaichi
+                <input type="submit" value ="order"/>
+                 </form>
+                  <h1 id="msg"></h1>
+                 </center>
+                  </body>
+</html>
